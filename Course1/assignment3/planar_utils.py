@@ -18,7 +18,7 @@ def plot_decision_boundary(model, X, y):
     plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral)
     plt.ylabel('x2')
     plt.xlabel('x1')
-    plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.cm.Spectral)
+    plt.scatter(X[0, :], X[1, :], c=np.squeeze(y), cmap=plt.cm.Spectral)
     
 
 def sigmoid(x):
@@ -31,7 +31,7 @@ def sigmoid(x):
     Return:
     s -- sigmoid(x)
     """
-    s = 1/(1+np.exp(-x))
+    s = 1/(1+np.longdouble(np.exp(-x)))
     return s
 
 def load_planar_dataset():
